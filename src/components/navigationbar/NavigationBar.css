@@ -28,7 +28,6 @@
     background-color: red;
     align-items: start;
     grid-column-start: 1;
-    grid-row-start: 2;
     grid-column-end: 5;
     z-index: 1;
     display: grid;

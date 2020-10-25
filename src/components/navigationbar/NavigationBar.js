@@ -1,17 +1,22 @@
 import React from "react";
 import "./NavigationBar.css";
+import { useHistory } from "react-router-dom";
 
-function NavigationBar() {
+export const NavigationBar = () => {
+  const history = useHistory();
+
   return (
     <div class="topnav" id="myTopnav">
-      <a class="topnavpage" href="#home">
+      <a onClick={() => history.push("/")} class="topnavpage" href="home">
         Home
       </a>
-      <a href="#news">News</a>
+      <a onClick={() => history.push("/about")} href="about">
+        About
+      </a>
+      <a onClick={() => history.push("/signin")} href="signin">
+        Sign in
+      </a>
       <a href="#contact">Contact</a>
-      <a href="/Users/alidabard/Alida/About/about.html">About</a>
     </div>
   );
-}
-
-export default NavigationBar;
+};
