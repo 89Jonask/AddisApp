@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 
 export const Signin = () => {
-  const [loggedInUser, setLoggedInUser] = useState("Jonatan");
+  const [username, setUsername] = useState();
   const [password, setPassword] = useState();
 
   return (
     <div>
-      <span>E-mail</span>
-      <input onChange={(event) => setLoggedInUser(event.target.value)} />
+      <span>Username</span>
+      <input onChange={(event) => setUsername(event.target.value)} />
       <br />
       <span>Password</span>
       <input
