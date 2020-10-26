@@ -1,21 +1,9 @@
 .App {
   font-family: Arial, Helvetica, sans-serif;
-  display: grid;
-  width: 100%;
-  grid-template-columns: minmax(45px, auto) 1fr minmax(45px, auto);
-  grid-template-rows: minmax(45px, auto) minmax(45px, auto) 1fr minmax(
-      45px,
-      auto
-    );
-  place-items: center;
   background-color: violet;
-  align-items: center;
 }
 
 .App-header {
   color: black;
-  grid-column-start: 1;
-  grid-row: 1;
-  grid-column-end: 5;
   font-size: xx-large;
 }
