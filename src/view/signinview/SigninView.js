@@ -1,8 +1,9 @@
 import React, { useState, useContext } from "react";
 import { UserContext } from "../../shared/global/provider/UserProvider";
 import { useHistory } from "react-router-dom";
+import RoutingPath from "../../routes/RoutingPath";
 
-export const Signin = () => {
+export const SigninView = () => {
   const history = useHistory();
   const [username, setUsername] = useState();
   const [password, setPassword] = useState();
@@ -11,7 +12,7 @@ export const Signin = () => {
   const login = () => {
     setAuthenticatedUser(username);
     localStorage.setItem("username", username);
-    history.push("/");
+    history.push(RoutingPath.homeView);
   };
 
   return (

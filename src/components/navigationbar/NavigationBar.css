@@ -1,23 +1,24 @@
-.navigationBarWrapper {
-  display: grid;
-  grid-template-columns: minmax(45px, auto) 1fr 1fr 1fr 1fr minmax(45px, auto);
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: violet;
-  justify-items: center;
-}
-
 .navigationBar {
-  grid-column-start: 1;
-  grid-column-end: 7;
+  width: 80%;
+  margin: 0 auto;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: blue;
 }
 
-.profile {
-  position: absolute;
-  top: 2%;
-  right: 10%;
+.main-menu {
+  text-align: center;
+  padding-inline-start: 0%;
 }
 
-.navigationBar a {
+.main-menu li {
+  list-style: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.main-menu li a {
+  display: inline-block;
+  padding: 1em;
   color: black;
   text-align: center;
   padding: 14px 30px 16px;
@@ -25,41 +26,85 @@
   font-size: 24px;
 }
 
-.navigationBar a:hover {
+.main-menu a:hover {
   color: gray;
 }
 
-.navigationBar .icon {
+.main-menu li a:hover .dropDown {
+  display: block;
+}
+
+.hamburger-icon {
+  padding: 1em;
   display: none;
-  background-color: tomato;
+  font: normal normal normal 16px/1 Roboto;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 @media screen and (max-width: 600px) {
   .navigationBar {
-    background-color: red;
-    z-index: 1;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .navigationBar {
-    color: black;
-    text-decoration: underline;
-    display: flex;
-    text-align: left;
-    font-size: 20px;
     width: 100%;
   }
-}
+  .navigation {
+    float: left;
+    display: block;
+  }
 
-@media screen and (max-width: 600px) {
-  .navigationBar a:not(:last-child) {
+  .main-menu {
     display: none;
   }
-}
 
-@media screen and (max-width: 600px) {
-  .profile {
-    grid-column: 4;
+  .main-menu.active {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    z-index: 99;
+    background-color: rgb(0, 255, 60);
+    text-align: left;
+  }
+
+  .main-menu li {
+    width: 100%;
+  }
+
+  .main-menu li a {
+    margin: auto;
+  }
+
+  .hamburger-icon {
+    display: block;
+    text-align: center;
+    padding-right: 30px;
+    cursor: pointer;
+    width: 1%;
+  }
+  .burger-1,
+  .burger-2,
+  .burger-3 {
+    display: block;
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    border-radius: 30px;
+    right: 0;
+    margin-right: 25px;
+    background: #fff;
+    -webkit-transition: 0.2s ease;
+    -ms-transition: 0.2s ease;
+    -moz-transition: 0.2s ease;
+    -o-transition: 0.2s ease;
+    transition: 0.2s ease;
+  }
+  .burger-1 {
+    top: 15px;
+  }
+  .burger-2 {
+    top: 23px;
+  }
+  .burger-3 {
+    top: 31px;
   }
 }
